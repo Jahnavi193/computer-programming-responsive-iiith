@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="exp1.css">
+	<script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="exp.js"></script>
+</head>
+<body>
+	<h2>Experiment</h2>
+	<div align="center">
+	<select id="selection">
+		<option value="null">---Select Language---</option>
+		<option value="english">English</option>
+		<option value="hindi">Hindi</option>
+	</select>
+    </div>
+    <div id="english" class="data" align="center">
+    	<p>Form a sentence (Declarative or Interrogative or any other type) from the given words<br>(select the buttons in proper order)</p>
+    	<div align="center" id="words_sentence">
+    		<button id="Jimin" onClick="display(this.id)">Jimin</button>
+    		<button id="Minsu" onClick="display(this.id)">Minsu</button>
+    		<button id="chruch" onClick="display(this.id)">chruch</button>
+    		<button id="and" onClick="display(this.id)">and</button>
+    		<button id="to" onClick="display(this.id)">to</button>
+    		<button id="went" onClick="display(this.id)">went</button>
+    		<p id="form" align="center"></p>
+    		<p id="down" style ="color:blue; font-size: 20px; font-weight: bold;" align="center"></p>
+    		<br><br>
+    		<div align="center">
+    			<button onclick="clears()">Re-form the sentence</button>
+    		</div>
+    		<br><br>
+    		<p align="center" id="check_ans"></p>
+    		<br>
+             </div>
+    		<div align="center" id='answer'></div>
+    	</div>
+    </div>
+    <div id="hindi" class="data" align="center">
+    	<p>Form a sentence (Declarative or Interrogative or any other type) from the given words<br>(select the buttons in proper order)</p>
+    	<div align="center" id="words_sentence">
+    		<button id="सो" onClick="display1(this.id)">सो</button>
+    		<button id="कि" onClick="display1(this.id)">कि</button>
+    		<button id="राम" onClick="display1(this.id)">राम</button>
+    		<button id="बताया" onClick="display1(this.id)">बताया</button>
+    		<button id="रहा" onClick="display1(this.id)">रहा</button>
+    		<button id="उसे" onClick="display1(this.id)">उसे</button>
+    		<button id="मैंने" onClick="display1(this.id)">मैंने</button>
+    		<button id="है" onClick="display1(this.id)">है</button>
+    		<p id="form1" align="center"></p>
+    		<p id="down1" style ="color:blue; font-size: 20px; font-weight: bold;" align="center"></p>
+    		<br><br>
+    		<div align="center">
+    			<button onclick="clears()">Re-form the sentence</button>
+    		</div>
+    		<br><br>
+    		</div>
+    		<div align="center" id='answer1'></div>
+    	</div>
+    </div>
+	<script>
+		var el_down = document.getElementById("down");
+		var form_e = document.getElementById("form");
+		function display(clicked) { 
+		form_e.innerHTML="<b>Formed Sentence</b><i> (after selecting words)</i>";
+        el_down.innerHTML = clicked;
+    }
+        var el_down1 = document.getElementById("down1");
+        var form_h = document.getElementById("form1");
+		function display1(clicked) { 
+		form_h.innerHTML="<b>Formed Sentence</b><i> (after selecting words)</i>";
+        el_down1.innerHTML = clicked;
+    }
+       var ans_e=document.getElementById("answer");
+       function getAnswer(){
+       	ans_e.innerHTML="<p>John ate an apple before afternoon<br>before afternoon John ate an apple<br>	John before afternoon ate an apple</p>";
+       }
+       var ans_h=document.getElementById("answer1");
+       function getAnswer1(){
+       	ans_h.innerHTML="<p>मैंने उसे बताया कि राम सो रहा है <br>	मैंने उसे बताया कि सो रहा है राम	<br>उसे मैंने बताया कि राम सो रहा है	<br>उसे मैंने बताया कि सो रहा है राम <br>	मैंने बताया उसे कि राम सो रहा है <br>	मैंने बताया उसे कि सो रहा है राम	<br>उसे बताया मैंने कि राम सो रहा है	<br>उसे बताया मैंने कि सो रहा है राम	<br>बताया मैंने उसे कि राम सो रहा है <br>	बताया मैंने उसे कि सो रहा है राम <br>	बताया उसे मैंने कि राम सो रहा है	<br>बताया उसे मैंने कि सो रहा है राम</p>";
+       }
+	</script>
+</body>
+</html>
